@@ -21,7 +21,7 @@ const Footer = () => {
           project?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Let's discuss how I can help you build innovative solutions with AI/ML and modern technologies.
+          Let&apos;s discuss how I can help you build innovative solutions with AI/ML and modern technologies.
         </p>
         <a href="mailto:stephenferrao.in@gmail.com">
           <MagicButton
