@@ -63,10 +63,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   enableTilt = true,
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
-  miniAvatarUrl,
   name = "Skill",
-  showUserInfo = true,
-  onContactClick,
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -231,10 +228,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     const pointerLeaveHandler = handlePointerLeave as EventListener;
     const deviceOrientationHandler = handleDeviceOrientation as EventListener;
 
+    
+interface DeviceMotionEventConstructor {
+  requestPermission?: () => Promise<'granted' | 'denied'>;
+}
+    
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
-      if (typeof (window.DeviceMotionEvent as any).requestPermission === 'function') {
-        (window.DeviceMotionEvent as any)
+      const deviceMotionEvent = window.DeviceMotionEvent as unknown as DeviceMotionEventConstructor;
+      if (typeof deviceMotionEvent.requestPermission === 'function') {
+        deviceMotionEvent
           .requestPermission()
           .then((state: string) => {
             if (state === 'granted') {

@@ -2,7 +2,6 @@ import React from 'react'
 import Particles from './utils/Particles'
 import ShinyText from './utils/ShinyText'
 import DeveloperCard from './utils/DeveloperCard'
-import GradientText from './utils/GradientText'
 
 const AboutMe = () => {
     const textData1 = ' I\'m Stephen Ferrao, a Full-Stack Developer deeply interested in AI-powered systems and modern web tech. I enjoy building efficient, scalable apps using technologies like Next.js, FastAPI, and MongoDB.'

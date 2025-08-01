@@ -27,6 +27,7 @@ const Contact = () => {
 
       const data = await res.json();
       setStatus(data.success ? 'Message sent!' : 'Failed to send message.');
+      console.log(status)
       toast.success('Message sent!')
     } catch (error) {
       console.error(error);

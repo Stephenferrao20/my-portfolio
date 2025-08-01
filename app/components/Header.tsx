@@ -11,7 +11,7 @@ const Header = () => {
       ];
   return (
     <div className='fixed top-0 left-0 w-full z-50 flex justify-center items-center py-4'>
-        <div className=' py-2 px-4 rounded-full bg-blend-difference backdrop-blur-2xl'>
+        <div className=' py-2 px-4 rounded-full bg-blend-difference backdrop-blur-md bg-white/10'>
       <GooeyNav
     items={items}
     particleCount={15}
